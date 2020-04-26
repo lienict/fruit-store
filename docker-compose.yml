@@ -1,0 +1,15 @@
+version: '3'
+services:
+  servertest:
+    container_name: servertest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: npm start
+    volumes:
+      - ./:/usr/servertest
+      - /usr/servertest/node_modules
+    ports:
+      - "4000:4000"
+
+
